@@ -1,0 +1,32 @@
+﻿@model  Working.Models.MyViewModel
+@using Working.Models;
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Kastamonu";
+    string name = "Mehmet Akif Yücel";
+    
+}
+<div id="header">
+    <div class="flexContainer">
+
+            @foreach (Image image in Model.GetImages())
+            {
+                <figure>
+                    <img src="@image.Url" alt="@image.Alt" id="header" />
+                    <figcaption>@image.Name</figcaption>
+                </figure>
+            }
+        </div>
+    </div>
+<br /><br />
+@Html.Partial("_Partial", "Mehmet Akif Yücel")
+    <p>Hello @name .</p>
+<p id="info"></p>
+<p>Where is the biggest town of Kastamonu?</p>
+<input id="answer" type="text"/>
+<button onclick="validationFuntion()">Answer</button>
+<span id="message"></span>
+<p>Multiply two numbers.</p>
+<input id="calculate" type="text" />
+<button onclick="trying()">Calculate</button>
+<span id="operation"></span>

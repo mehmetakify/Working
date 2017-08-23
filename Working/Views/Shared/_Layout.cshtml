@@ -1,0 +1,27 @@
+﻿@using Working.Models
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Contents/styles.css" rel="stylesheet" />
+    <script src="~/Contents/FormValidation.js"></script>
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <header>
+        <div class="flexContainer">
+                        <a href="/Home/index">Home</a>
+
+                        @{ foreach(Town town in Model.GetTowns()){
+                                <a href=@town.Url>@town.Name</a>
+                        }
+            }
+        </div>
+    </header>
+    <br /><br/>
+    <div>
+        @RenderBody()
+    </div>
+</body>
+</html>
